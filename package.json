@@ -1,0 +1,55 @@
+{
+  "name": "cf-gallery-app-react",
+  "version": "1.0.0",
+  "description": "A React application example for the gallery space template. ",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.13.1",
+    "babel-polyfill": "^6.13.0",
+    "contentful": "^3.5.0",
+    "postcss-loader": "^0.9.1",
+    "react": "^15.3.0",
+    "react-css-modules": "^3.7.9",
+    "react-dom": "^15.3.0",
+    "react-image-gallery": "^0.6.7",
+    "react-modal": "^1.4.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.6.1",
+    "react-router-redux": "^4.0.5",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-promise-middleware": "^3.3.2",
+    "redux-thunk": "^2.1.0",
+    "sass-loader": "^4.0.0",
+    "standard": "^7.1.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.23.1",
+    "mustache": "^2.2.1",
+    "node-sass": "^3.8.0",
+    "standard": "^7.1.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "scripts": {
+    "build": "npm run clean && NODE_ENV=production BASE_PATH=discovery-app-react webpack -p",
+    "clean": "rimraf dist && rimraf gh-pages",
+    "lint": "standard \"src/util/**/*.js\" \"test/**/*.js\"",
+    "lint:fix": "standard \"src/util/**/*.js\" \"test/**/*.js\" --fix",
+    "start": "NODE_ENV=development webpack-dev-server --host=0.0.0.0 --port=9020 --inline --hot",
+    "test": "npm run lint"
+  },
+  "repository": "contentful/gallery-app-react",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/contentful/gallery-app-react/issues"
+  },
+  "homepage": "https://github.com/contentful/gallery-app-react#readme"
+}

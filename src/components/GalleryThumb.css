@@ -1,0 +1,49 @@
+.c-galleryThumb {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  box-shadow : 0 .5em 3em #ddd;
+  background: #fff;;
+
+  text-align : center;
+}
+  .c-galleryThumb__caption {
+    padding : 1em;
+  }
+
+  .c-galleryThumb__figure {
+    overflow: hidden;
+  }
+
+  .c-galleryThumb__figure:hover img {
+    transform : scale(1.03125) translate(-50%, -50%);
+  }
+
+  .c-galleryThumb__imageContainer {
+    display: block;
+    position: relative;
+
+    overflow: hidden;
+
+    height: 0;
+
+    padding : 0 0 65%;
+  }
+
+  .c-galleryThumb__imageContainer img {
+    display: block;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    transition : transform .25s ease-in-out;
+  }
+
+  .c-galleryThumb__title {
+    font-size : 1.25em;
+
+    padding : 1em 0 .5em;
+  }

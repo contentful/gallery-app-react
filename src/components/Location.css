@@ -1,0 +1,12 @@
+.c-location {
+  padding : 1em .5em;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.c-location svg {
+  margin-right: .5em;
+}
