@@ -7,58 +7,51 @@ import Date from './Date'
 import Location from './Location'
 import ResponsiveImage from './ResponsiveImage'
 
-class GalleryThumb extends React.Component {
-  constructor(props) {
-    super(props)
+function GalleryThumb ({ gallery }) {
+  return (
+    <div styleName="c-galleryThumb">
+      <figure styleName="c-galleryThumb__figure">
+        <Link to={`/gallery/${gallery.sys.id}`} styleName="c-galleryThumb__imageContainer">
+          <ResponsiveImage src={ gallery.fields.coverImage.fields.file.url } alt={ `Open Gallery ${ gallery.fields.title }` }/>
+        </Link>
 
-    this.state = { gallery : props.entry }
-  }
-  render () {
-    return (
-      <div styleName="c-galleryThumb">
-        <figure styleName="c-galleryThumb__figure">
-          <Link to={`/gallery/${this.state.gallery.sys.id}`} styleName="c-galleryThumb__imageContainer">
-            <ResponsiveImage src={ this.state.gallery.fields.coverImage.fields.file.url } alt={ `Open Gallery ${ this.state.gallery.fields.title }` }/>
-          </Link>
+        <figcaption styleName="c-galleryThumb__caption">
+          <div styleName="c-galleryThumb__title">{ gallery.fields.title }</div>
 
-          <figcaption styleName="c-galleryThumb__caption">
-            <div styleName="c-galleryThumb__title">{ this.state.gallery.fields.title }</div>
+          <div className="u-marginBottomSmall">
+            <Author author={ gallery.fields.author }></Author>
+          </div>
 
-            <div className="u-marginBottomSmall">
-              <Author entry={ this.state.gallery.fields.author }></Author>
-            </div>
+          { renderTags(gallery) }
 
-            { this.renderTags() }
+          <div className="u-marginBottomSmall u-flexHorizCenter">
+            <Date entry={ gallery.fields.date } />
+            <Location entry={ gallery.fields.location } />
+          </div>
 
-            <div className="u-marginBottomSmall u-flexHorizCenter">
-              <Date entry={ this.state.gallery.fields.date } />
-              <Location entry={ this.state.gallery.fields.location } />
-            </div>
-
-          </figcaption>
-        </figure>
-        <div className="u-flexHorizCenter u-marginTopAuto u-marginBottomDefault">
-          <Link to={`/gallery/${this.state.gallery.sys.id}`} className="o-btnPrimary">View gallery</Link>
-        </div>
+        </figcaption>
+      </figure>
+      <div className="u-flexHorizCenter u-marginTopAuto u-marginBottomDefault">
+        <Link to={`/gallery/${gallery.sys.id}`} className="o-btnPrimary">View gallery</Link>
       </div>
-    )
-  }
+    </div>
+  )
+}
 
-  renderTags() {
-    if ( this.state.gallery.fields.tags ) {
-      return (
-        <ul className="o-listReset">
-        {
-          this.state.gallery.fields.tags.map(
-            ( entry, index ) => ( <li key={index} className="o-tag">{ entry }</li> )
-          )
-        }
-        </ul>
-      )
-    }
+function renderTags(gallery) {
+  if ( gallery.fields.tags ) {
+    return (
+      <ul className="o-listReset">
+      {
+        gallery.fields.tags.map(
+          ( entry, index ) => ( <li key={index} className="o-tag">{ entry }</li> )
+        )
+      }
+      </ul>
+    )
   }
 }
 
-GalleryThumb.propTypes = { entry: React.PropTypes.object };
+GalleryThumb.propTypes = { gallery: React.PropTypes.object };
 
 export default CSSModules(GalleryThumb, styles)

@@ -5,38 +5,25 @@ import promiseMiddleware from 'redux-promise-middleware'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { browserHistory } from 'react-router'
 import rootReducer from './reducers/index'
-import { deliveryAccessToken, previewAccessToken, spaceId, galleryTypeId } from '../config'
+import { deliveryAccessToken, spaceId, galleryTypeId } from '../config'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as actionCreators from './actions/actionCreators'
 
-const initialState = {
-  api: {
-    deliveryAccessToken,
-    selectedApi: 'delivery',
-    spaceId
-  },
-  app: {
-    galleryTypeId,
-    authState: 'loading'
-  },
-  galleries: {
-    fetching: false,
-    entries: {}
-  }
-}
 const middleware = applyMiddleware(promiseMiddleware(), thunk, logger())
 
 function RunDevToolExtensionIfNotInProduction () {
-  const shouldExposeState = (!process.env.NODE_ENV ||
-  process.env.NODE_ENV !== 'production') &&
-  window.devToolsExtension
+  const shouldExposeState = ( !process.env.NODE_ENV || process.env.NODE_ENV !== 'production')
+                            && window.devToolsExtension
+
   return (shouldExposeState ? window.devToolsExtension() : (f) => f)
 }
-export const store = createStore(rootReducer, initialState, compose(middleware,
-  RunDevToolExtensionIfNotInProduction()
-))
+
+export const store = createStore(
+  rootReducer,
+  compose(middleware, RunDevToolExtensionIfNotInProduction())
+)
 
 export const history = syncHistoryWithStore(browserHistory, store)
 

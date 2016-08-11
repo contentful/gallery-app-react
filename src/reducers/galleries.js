@@ -1,4 +1,6 @@
-function gallery(state = { fetching: false }, payload) {
+import { makeReducer } from './util'
+
+function gallery(state = { fetching: false, entries: {} }, payload) {
   return Object.assign(
     {},
     state,
@@ -7,63 +9,45 @@ function gallery(state = { fetching: false }, payload) {
 }
 
 
-export function galleries (state = {items: []}, action) {
+export const galleries = makeReducer(function(action) {
   switch (action.type) {
     case 'LOAD_GALLERIES_PENDING':
-      console.log( 'pending', action.payload );
-      return Object.assign(
-        {},
-        state,
-        {fetching: true}
-      )
+      return { fetching: true }
     case 'LOAD_GALLERIES_FULFILLED':
-      return Object.assign(
-        {},
-        state,
-        {
-          fetching: false,
-          entries: action.payload.reduce( ( collection, entry ) => {
-            collection[ entry.sys.id ] = entry
-            return collection
-          }, {} )
-        }
-      )
+      return {
+        fetching: false,
+        entries: action.payload.reduce( ( collection, entry ) => {
+          collection[ entry.sys.id ] = entry
+          return collection
+        }, {} )
+      }
     case 'LOAD_GALLERIES_REJECTED':
-      return Object.assign(
-        {},
-        state,
-        { error: true, fetching: false }
-      )
-
+      return { error: true, fetching: false }
 
 
     case 'LOAD_GALLERY_PENDING':
-      const payload = {
-        fetching: true
-      }
-
-      state.entries = Object.assign(
-        state.entries,
-        {
-          [ action.meta.id ] : gallery( state.entries[ action.meta.id ], payload )
+      return {
+        entries : {
+          [ action.meta.id ] : {
+            fetching: true
+          }
         }
-      )
-
-      return Object.assign( {}, state );
+      };
     case 'LOAD_GALLERY_FULFILLED':
       action.payload.fetching = false;
-
-      state.entries = Object.assign(
-        state.entries, { [ action.meta.id ] : action.payload }
-      )
-
-      return Object.assign( {}, state )
+      return {
+        entries : {
+          [ action.meta.id ] : action.payload
+        }
+      };
     case 'LOAD_GALLERY_REJECTED':
-      state.entries = Object.assign(
-        state.entries, { [ action.meta.id ] : { error: true, fetching: false } }
-      )
-
-      return Object.assign( {}, state );
+      return {
+        entries : {
+          [ action.meta.id ] : {
+            error: true,
+            fetching: false
+          }
+        }
+      };
   }
-  return state
-}
+}, { entries: [] } )

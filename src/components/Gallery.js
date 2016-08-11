@@ -101,7 +101,7 @@ class Gallery extends React.Component {
             <Link to={`/`} styleName="c-gallery__close" className="o-btnClose" aria-label="Go back to all galleries">
               ✕
             </Link>
-            <Author entry={ gallery.fields.author }></Author>
+            <Author author={ gallery.fields.author }></Author>
 
             { this.renderTags( gallery ) }
 

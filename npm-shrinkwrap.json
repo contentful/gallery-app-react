@@ -167,11 +167,6 @@
       "from": "aws4@>=1.2.1 <2.0.0",
       "resolved": "https://registry.npmjs.org/aws4/-/aws4-1.4.1.tgz"
     },
-    "axios": {
-      "version": "0.13.1",
-      "from": "axios@>=0.13.1 <0.14.0",
-      "resolved": "https://registry.npmjs.org/axios/-/axios-0.13.1.tgz"
-    },
     "babel-code-frame": {
       "version": "6.11.0",
       "from": "babel-code-frame@>=6.8.0 <7.0.0",
@@ -851,6 +846,11 @@
       "version": "1.0.1",
       "from": "deep-equal@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/deep-equal/-/deep-equal-1.0.1.tgz"
+    },
+    "deep-extend": {
+      "version": "0.4.1",
+      "from": "deep-extend@latest",
+      "resolved": "https://registry.npmjs.org/deep-extend/-/deep-extend-0.4.1.tgz"
     },
     "deep-is": {
       "version": "0.1.3",

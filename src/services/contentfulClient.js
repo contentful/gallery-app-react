@@ -2,7 +2,6 @@ import { createClient } from 'contentful'
 
 let client
 let authorized
-let currentSpace
 
 function initClient (spaceId, accessToken ) {
   client = createClient({
@@ -13,7 +12,6 @@ function initClient (spaceId, accessToken ) {
   return client.getSpace()
     .then((space) => {
       authorized = true
-      currentSpace = space
       return space
     })
 }

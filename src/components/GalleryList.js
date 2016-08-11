@@ -19,19 +19,19 @@ class GalleryList extends React.Component {
             Object.keys( this.props.galleries.entries ).map( id => {
               return (
                 <li key={ id }>
-                  <GalleryThumb entry={ this.props.galleries.entries[ id ] }></GalleryThumb>
+                  <GalleryThumb gallery={ this.props.galleries.entries[ id ] }></GalleryThumb>
                 </li>
               )
             } )
           }
         </ul>
 
-        { this.renderWarning() }
+        { this.maybeRenderWarning() }
       </div>
     )
   }
 
-  renderWarning () {
+  maybeRenderWarning () {
     if ( this.props.galleries.error ) {
       return (
         <div className="o-warning">

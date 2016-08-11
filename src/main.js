@@ -9,7 +9,7 @@ import NoMatch from './components/NoMatch'
 import { Provider } from 'react-redux'
 import { store, history } from './store'
 
-const router = ((
+const router = (
 <Provider store={store}>
   <Router history={history}>
     <Route path='/' component={App}>
@@ -22,6 +22,6 @@ const router = ((
     </Route>
   </Router>
 </Provider>
-))
+)
 
-render(router, document.getElementsByTagName('main')[0])
+render(router, document.querySelector('main'))

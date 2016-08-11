@@ -4,9 +4,9 @@
   "description": "A React application example for the gallery space template. ",
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.13.1",
     "babel-polyfill": "^6.13.0",
     "contentful": "^3.5.0",
+    "deep-extend": "^0.4.1",
     "postcss-loader": "^0.9.1",
     "react": "^15.3.0",
     "react-css-modules": "^3.7.9",

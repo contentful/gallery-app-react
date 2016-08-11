@@ -18,7 +18,7 @@ cat index.html | \
   sed -e 's/<!--ANALYTICS-->/{{{ANALYTICS}}}/g' > \
   $PAGES_DIR/index.mustache
 
-./node_modules/.bin/mustache ./bin/analytics.json $PAGES_DIR/index.mustache > $PAGES_DIR/index.html
+./node_modules/.bin/mustache ../config/analytics.json $PAGES_DIR/index.mustache > $PAGES_DIR/index.html
 rm -f $PAGES_DIR/index.mustache
 
 cp $PAGES_DIR/index.html $PAGES_DIR/404.html

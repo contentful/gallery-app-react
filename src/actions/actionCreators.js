@@ -1,9 +1,8 @@
-// import * as contentTypeServie from '../services/contentTypeStore'
 import * as galleryService from '../services/galleryStore'
 import { store } from '../store'
 import axios from 'axios'
 
-export function setAppClientState ({authState}) {
+export function setAppClientState (authState) {
   return {
     type: 'LOADED_CLIENT',
     authState

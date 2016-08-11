@@ -23,7 +23,7 @@
     position: absolute;
 
     top: 50%;
-    right : 1em;
+    right: 1em;
 
     transform: translate(0, -50%);
   }
