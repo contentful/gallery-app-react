@@ -41,6 +41,6 @@ function mapDispatchToProps (dispatch) {
 }
 
 
-export function bindToGlobalState(component) {
+export function connectComponent(component) {
    return connect(mapStateToProps, mapDispatchToProps)(component)
 }

@@ -8,7 +8,7 @@ import Author from './Author'
 import Date from './Date'
 import Location from './Location'
 import ImageGallery from 'react-image-gallery'
-import { bindToGlobalState } from '../store'
+import { connectComponent } from '../store'
 
 const customStyles = {
   content : {
@@ -161,4 +161,4 @@ class Gallery extends React.Component {
   }
 }
 
-export default bindToGlobalState(CSSModules(Gallery, styles))
+export default connectComponent(CSSModules(Gallery, styles))

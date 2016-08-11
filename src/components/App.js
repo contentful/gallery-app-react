@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 import CSSModules from 'react-css-modules'
 import styles from './App.css'
-import { bindToGlobalState } from '../store'
+import { connectComponent } from '../store'
 import { initClient, getClient } from '../services/contentfulClient'
 
 import Main from '../styles/main.scss'
@@ -71,4 +71,4 @@ App.contextTypes = {
   router: PropTypes.object.isRequired
 }
 
-export default bindToGlobalState(CSSModules(App, styles))
+export default connectComponent(CSSModules(App, styles))

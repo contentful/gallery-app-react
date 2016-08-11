@@ -1,6 +1,6 @@
 import App from './App'
-import { bindToGlobalState } from '../store'
+import { connectComponent } from '../store'
 
-const Main = bindToGlobalState(App)
+const Main = connectComponent(App)
 
 export default Main

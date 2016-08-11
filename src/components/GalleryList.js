@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { getClient } from '../services/contentfulClient'
 import GalleryThumb from './GalleryThumb'
-import { bindToGlobalState } from '../store'
+import { connectComponent } from '../store'
 
 
 class GalleryList extends React.Component {
@@ -43,4 +43,4 @@ class GalleryList extends React.Component {
   }
 }
 
-export default bindToGlobalState(GalleryList)
+export default connectComponent(GalleryList)
