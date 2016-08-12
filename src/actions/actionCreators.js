@@ -1,6 +1,4 @@
 import * as galleryService from '../services/galleryStore'
-import { store } from '../store'
-import axios from 'axios'
 
 export function setAppClientState (authState) {
   return {
@@ -9,14 +7,14 @@ export function setAppClientState (authState) {
   }
 }
 
-export function loadGalleries({contentTypeId}) {
+export function loadGalleries ({contentTypeId}) {
   return {
     type: 'LOAD_GALLERIES',
     payload: galleryService.loadGalleries(contentTypeId)
   }
 }
 
-export function loadGallery(id) {
+export function loadGallery (id) {
   return {
     type: 'LOAD_GALLERY',
     payload: galleryService.loadGallery(id),

@@ -1,0 +1,9 @@
+{
+  "extends": ["standard", "plugin:react/recommended"],
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "no-return-assign": "off"
+  }
+}

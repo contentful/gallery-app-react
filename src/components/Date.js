@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
 import styles from './Date.css'
 
-function Date({ date }) {
-  if ( date ) {
+function Date ({ date }) {
+  if (date) {
     return (
       <div styleName="c-date">
         <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -16,6 +16,6 @@ function Date({ date }) {
   }
 }
 
-Date.propTypes = { date: React.PropTypes.string };
+Date.propTypes = { date: PropTypes.string }
 
 export default CSSModules(Date, styles)

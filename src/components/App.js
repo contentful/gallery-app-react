@@ -3,13 +3,13 @@ import { Link } from 'react-router'
 import CSSModules from 'react-css-modules'
 import styles from './App.css'
 import { connectComponent } from '../store'
-import { initClient, getClient } from '../services/contentfulClient'
+import { initClient } from '../services/contentfulClient'
 
+/*eslint-disable no-unused-vars*/
 import Main from '../styles/main.scss'
 
-
 class App extends React.Component {
-  componentWillMount() {
+  componentWillMount () {
     const { spaceId, deliveryAccessToken } = this.props.app
 
     initClient(spaceId, deliveryAccessToken)
@@ -20,7 +20,6 @@ class App extends React.Component {
   }
 
   render () {
-
     return (
       <div>
         <nav styleName='c-nav'>
@@ -32,7 +31,7 @@ class App extends React.Component {
           </div>
           {
             (() => {
-              if ( this.props.app.authState === 'loading' ) {
+              if (this.props.app.authState === 'loading') {
                 return (
                   <div styleName="c-nav__spinner">
                     <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" className="k-rotate">
@@ -46,7 +45,7 @@ class App extends React.Component {
           }
         </nav>
         { (() => {
-          if ( this.props.app.authState === 'success' ) {
+          if (this.props.app.authState === 'success') {
             return (
               <div className="o-container">
                 {this.props.children}
@@ -54,7 +53,7 @@ class App extends React.Component {
             )
           }
 
-          if ( this.props.app.authState === 'error' ) {
+          if (this.props.app.authState === 'error') {
             return (
               <div role="warning" className="o-warning">
                 <p>The connection to contenful could not be established.</p>
@@ -69,6 +68,12 @@ class App extends React.Component {
 }
 App.contextTypes = {
   router: PropTypes.object.isRequired
+}
+
+App.propTypes = {
+  app: PropTypes.object,
+  children: PropTypes.object,
+  setAppClientState: PropTypes.func
 }
 
 export default connectComponent(CSSModules(App, styles))

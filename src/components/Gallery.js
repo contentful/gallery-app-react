@@ -11,53 +11,51 @@ import ImageGallery from 'react-image-gallery'
 import { connectComponent } from '../store'
 
 const customStyles = {
-  content : {
-    position  : 'static',
-    left      : 'auto',
-    padding   : 0,
+  content: {
+    position: 'static',
+    left: 'auto',
+    padding: 0,
 
-    border       : 'none',
-    borderRadius : 0,
-    overflow     : 'visible',
+    border: 'none',
+    borderRadius: 0,
+    overflow: 'visible',
 
-    boxShadow : '0 .5em 3em #ddd'
+    boxShadow: '0 .5em 3em #ddd'
   }
-};
-
-
+}
 
 class Gallery extends React.Component {
-  componentDidMount() {
+  componentDidMount () {
     this.props.loadGallery(this.props.params.galleryId)
   }
 
-  closeModal() {
+  closeModal () {
     browserHistory.goBack()
   }
 
   getIndexOfImage (imageCollection, id) {
-    let foundIndex = -1;
+    let foundIndex = -1
 
-    imageCollection.some( ( item, index ) => {
-      if ( item.fields.photo.sys.id === id ) {
-        foundIndex = index;
+    imageCollection.some((item, index) => {
+      if (item.fields.photo.sys.id === id) {
+        foundIndex = index
 
-        return true;
+        return true
       }
-    } )
+    })
 
-    return foundIndex;
+    return foundIndex
   }
 
-  componentWillReceiveProps() {
-    let gallery = this.props.galleries.entries[ this.props.params.galleryId ];
+  componentWillReceiveProps () {
+    let gallery = this.props.galleries.entries[ this.props.params.galleryId ]
 
-    if ( gallery && gallery.error ) {
-      browserHistory.push( '/not-found' )
+    if (gallery && gallery.error) {
+      browserHistory.push('/not-found')
     }
   }
 
-  renderImageEntry( entry ) {
+  renderImageEntry (entry) {
     return (
       <div>
         <ResponsiveImage
@@ -89,21 +87,20 @@ class Gallery extends React.Component {
     )
   }
 
-
   render () {
-    const gallery = this.props.galleries.entries[ this.props.params.galleryId ];
+    const gallery = this.props.galleries.entries[ this.props.params.galleryId ]
 
-    if ( gallery && gallery.fields ) {
+    if (gallery && gallery.fields) {
       return (
         <div>
           <div styleName="c-gallery__header">
             <h1 styleName="c-gallery__headline">{ gallery.fields.title }</h1>
-            <Link to={`/`} styleName="c-gallery__close" className="o-btnClose" aria-label="Go back to all galleries">
+            <Link to={'/'} styleName="c-gallery__close" className="o-btnClose" aria-label="Go back to all galleries">
               ✕
             </Link>
             <Author author={ gallery.fields.author }></Author>
 
-            { this.renderTags( gallery ) }
+            { this.renderTags(gallery) }
 
             <div className="u-marginBottomSmall u-flexHorizCenter">
               <Date entry={ gallery.fields.date } />
@@ -113,7 +110,7 @@ class Gallery extends React.Component {
 
           <ul className="o-listThirds">
             {
-              gallery.fields.images.map( ( entry, index ) => {
+              gallery.fields.images.map((entry, index) => {
                 return (
                   <li key={entry.sys.id}>
                     <div styleName="c-gallery__modalOpenLink">
@@ -124,11 +121,11 @@ class Gallery extends React.Component {
                     </div>
                   </li>
                 )
-              } )
+              })
             }
           </ul>
           <Modal
-            isOpen={!! this.props.params.imageId}
+            isOpen={!!this.props.params.imageId}
             onRequestClose={this.closeModal}
             style={customStyles}>
             <button onClick={this.closeModal.bind(this)} styleName="c-gallery__modalClose" className="o-btnClose"><span>✕</span></button>
@@ -146,19 +143,27 @@ class Gallery extends React.Component {
     }
   }
 
-  renderTags( gallery ) {
-    if ( gallery.fields.tags ) {
+  renderTags (gallery) {
+    if (gallery.fields.tags) {
       return (
         <ul className="o-listReset">
         {
           gallery.fields.tags.map(
-            ( entry, index ) => ( <li key={index} className="o-tag">{ entry }</li> )
+            (entry, index) => (<li key={index} className="o-tag">{ entry }</li>)
           )
         }
         </ul>
       )
     }
   }
+}
+
+Gallery.propTypes = {
+  app: PropTypes.object,
+  galleries: PropTypes.object,
+  loadGallery: PropTypes.func,
+  loadGalleries: PropTypes.func,
+  params: PropTypes.object
 }
 
 export default connectComponent(CSSModules(Gallery, styles))

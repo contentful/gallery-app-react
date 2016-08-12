@@ -3,7 +3,7 @@ import { createClient } from 'contentful'
 let client
 let authorized
 
-function initClient (spaceId, accessToken ) {
+export function initClient (spaceId, accessToken) {
   client = createClient({
     space: spaceId,
     accessToken,
@@ -16,8 +16,6 @@ function initClient (spaceId, accessToken ) {
     })
 }
 
-function getClient () {
+export function getClient () {
   return authorized && client
 }
-
-export { initClient, getClient }

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router'
 import CSSModules from 'react-css-modules'
 import styles from './GalleryThumb.css'
 import Author from './Author'
@@ -12,7 +12,7 @@ function GalleryThumb ({ gallery }) {
     <div styleName="c-galleryThumb">
       <figure styleName="c-galleryThumb__figure">
         <Link to={`/gallery/${gallery.sys.id}`} styleName="c-galleryThumb__imageContainer">
-          <ResponsiveImage src={ gallery.fields.coverImage.fields.file.url } alt={ `Open Gallery ${ gallery.fields.title }` }/>
+          <ResponsiveImage src={ gallery.fields.coverImage.fields.file.url } alt={ `Open Gallery ${gallery.fields.title}` }/>
         </Link>
 
         <figcaption styleName="c-galleryThumb__caption">
@@ -38,13 +38,13 @@ function GalleryThumb ({ gallery }) {
   )
 }
 
-function renderTags(gallery) {
-  if ( gallery.fields.tags ) {
+function renderTags (gallery) {
+  if (gallery.fields.tags) {
     return (
       <ul className="o-listReset">
       {
         gallery.fields.tags.map(
-          ( entry, index ) => ( <li key={index} className="o-tag">{ entry }</li> )
+          (entry, index) => (<li key={index} className="o-tag">{ entry }</li>)
         )
       }
       </ul>
@@ -52,6 +52,6 @@ function renderTags(gallery) {
   }
 }
 
-GalleryThumb.propTypes = { gallery: React.PropTypes.object };
+GalleryThumb.propTypes = { gallery: PropTypes.object }
 
 export default CSSModules(GalleryThumb, styles)
