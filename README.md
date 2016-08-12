@@ -9,8 +9,8 @@ This is a React application example for the [Contentful][1] gallery space templa
 
 ## Usage
 
-- Create a space with the "Gallery" space template on [Contentful][1]
-- Clone this repo and run `npm i`
+- create a space with the "Gallery" space template on [Contentful][1]
+- clone this repo and run `npm i`
 - edit `deliveryAccessToken`, `spaceId` and `galleryTypeId` (id of the content type `Photo Gallery`) in `config.js` included in the project root
 - run `npm start`
 - open `localhost:9020/` to see it in action
