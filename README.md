@@ -17,6 +17,6 @@ This is a React application example for the [Contentful][1] gallery space templa
 
 ## License
 
-Copyright (c) 2015 Contentful GmbH. See LICENSE for further details.
+Copyright (c) 2016 Contentful GmbH. See LICENSE for further details.
 
 [1]: https://www.contentful.com
