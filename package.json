@@ -7,7 +7,7 @@
     "babel-polyfill": "^6.13.0",
     "contentful": "^3.5.0",
     "deep-extend": "^0.4.1",
-    "postcss-loader": "^0.9.1",
+    "history": "^2.0.0",
     "react": "^15.3.0",
     "react-css-modules": "^3.7.9",
     "react-dom": "^15.3.0",
@@ -15,13 +15,10 @@
     "react-modal": "^1.4.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.1",
-    "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
     "redux-promise-middleware": "^3.3.2",
-    "redux-thunk": "^2.1.0",
-    "sass-loader": "^4.0.0",
-    "standard": "^7.1.2"
+    "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
@@ -33,20 +30,25 @@
     "css-loader": "^0.23.1",
     "eslint": "^3.2.2",
     "eslint-config-standard": "^5.3.5",
+    "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-react": "^6.0.0",
+    "eslint-plugin-standard": "^2.0.0",
     "mustache": "^2.2.1",
     "node-sass": "^3.8.0",
-    "standard": "^7.1.2",
+    "postcss-loader": "^0.9.1",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "build": "npm run clean && NODE_ENV=production BASE_PATH=discovery-app-react webpack -p",
+    "build": "npm run clean && NODE_ENV=production webpack -p",
     "clean": "rimraf dist && rimraf gh-pages",
     "lint": "eslint \"src/**/*.js\"",
     "start": "NODE_ENV=development webpack-dev-server --host=0.0.0.0 --port=9020 --inline --hot",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "publish": "npm run build && ./bin/publish.sh"
   },
   "repository": "contentful/gallery-app-react",
   "license": "MIT",

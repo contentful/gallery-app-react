@@ -25,7 +25,7 @@ class App extends React.Component {
         <nav styleName='c-nav'>
           <div className='o-container'>
             <Link to={'/'} styleName='c-nav__logo'>
-              <img styleName="c-nav__cfImage" src='/contentful_logo_120x90@2x.png' alt="Go to Contentful website" />
+              <img styleName="c-nav__cfImage" src='./contentful_logo_120x90@2x.png' alt="Go to Contentful website" />
               <span>Gallery App</span>
             </Link>
           </div>
