@@ -25,13 +25,7 @@ export const store = createStore(
 
 export const history = syncHistoryWithStore(browserHistory, store)
 
-function mapStateToProps (state) {
-  return {
-    api: state.api,
-    app: state.app,
-    galleries: state.galleries
-  }
-}
+export const mapStateToProps = state => state
 
 function mapDispatchToProps (dispatch) {
   return bindActionCreators(actionCreators, dispatch)
