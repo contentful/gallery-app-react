@@ -25,6 +25,11 @@ export const galleries = makeReducer(function (action) {
       }
     case 'LOAD_GALLERY_FULFILLED':
       action.payload.fetching = false
+
+      action.payload.fields.images.forEach(image => {
+        image.thumbnail = `${image.fields.photo.fields.file.url}?w=120`
+      })
+
       return {
         entries: {
           [ action.meta.id ]: action.payload
