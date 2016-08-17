@@ -1,0 +1,6 @@
+.responsiveImage {
+  display: block;
+  width: 100%;
+
+  transition: opacity .25s ease-in;
+}

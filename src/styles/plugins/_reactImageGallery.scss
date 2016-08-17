@@ -1,0 +1,27 @@
+.image-gallery-slide {
+  .image-gallery-description {
+    bottom : 2em;
+  }
+}
+
+.image-gallery {
+  width: 100vw;
+
+
+  @media (min-width:65em) {
+    width: 55vw;
+  }
+}
+
+.image-gallery-title {
+  font-size: 1.5em;
+  margin-bottom: .25em;
+}
+
+.image-gallery-thumbnails {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: transparent;
+}

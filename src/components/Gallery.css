@@ -1,0 +1,70 @@
+.c-gallery__close {
+  position: absolute;
+
+  right: 1em;
+  top: 1.75em;
+}
+
+.c-gallery__header {
+  position: relative;
+  padding : 1em 5em;
+
+  text-align: center;
+}
+
+.c-gallery__headline {
+  font-weight: normal;
+  text-align: center;
+}
+
+.c-gallery__modalClose {
+  position: absolute;
+
+  top: 0;
+  right: -1em;
+
+  z-index: 100;
+}
+
+.c-gallery__modalOpenTitle {
+  font-size: 1.25em;
+
+  position: absolute;
+
+  bottom: 1em;
+  left: 0;
+  z-index: 0;
+
+  padding: .5em;
+  color: #fff;
+
+  background: rgba(0,0,0,0.5);
+}
+
+.c-gallery__modalOpenLink {
+  display: block;
+  position: relative;
+
+  overflow: hidden;
+
+  height: 100%;
+
+}
+
+.c-gallery__modalOpenLink a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+}
+
+.c-gallery__modalOpenLink img {
+  // work around transform and scale rendering issues
+  margin: -1px;
+  transition: transform 0.25s ease-in-out;
+}
+
+.c-gallery__modalOpenLink:hover img {
+  transform: scale(1.03125);
+}

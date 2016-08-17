@@ -1,0 +1,62 @@
+.o-btnClose {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 2em;
+  height: 2em;
+
+  font-size: 1.25em;
+  line-height: 1;
+
+  background-color: #fff;
+
+  transform: translate(0, -50%);
+
+  border: 3px solid currentColor;
+  border-radius: 50%;
+
+  > span {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.o-btnClose:hover {
+  color: #5aaed0;
+}
+
+.o-btnClose:focus, .o-btnClose:active {
+  outline: none;
+  color: #de5452;
+}
+
+
+.o-btnPrimary {
+  display: block;
+
+  padding: .5em;
+
+  border: 2px solid currentColor;
+}
+
+.o-btnPrimary {
+  display: block;
+
+  min-width: 20em;
+
+  padding: .5em;
+
+  border: 2px solid currentColor;
+}
+
+.o-btnPrimary:hover {
+  color: #5aaed0;
+}
+
+.o-btnPrimary:focus, .o-btnPrimary:active {
+  outline: none;
+  color: #de5452;
+}

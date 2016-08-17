@@ -1,0 +1,29 @@
+.c-nav {
+  position : relative;
+
+  padding : 2em 0;
+}
+  .c-nav__cfImage {
+    display: block;
+
+    width: 2.5em;
+  }
+
+  .c-nav__logo {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.5em;
+    letter-spacing: 1px;
+  }
+
+  .c-nav__spinner {
+    position: absolute;
+
+    top: 50%;
+    right: 1em;
+
+    transform: translate(0, -50%);
+  }

@@ -1,0 +1,18 @@
+.c-author {
+  text-align: center;
+  padding: .5em 0;
+}
+
+.c-author::before, .c-author::after {
+  content: '—';
+
+  display : inline;
+}
+
+.c-author::before {
+  margin-right: 1em;
+}
+
+.c-author::after {
+  margin-left: 1em;
+}

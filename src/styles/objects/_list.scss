@@ -1,0 +1,54 @@
+.o-listReset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.o-listThirds {
+  list-style: none;
+
+  margin: 0 ;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  > li {
+    width: 100%;
+
+    @media (min-width:45em) {
+      width : 50%;
+    }
+    @media (min-width:65em) {
+      width : 33.333%;
+    }
+  }
+}
+
+.o-listThirdsWithSpace {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  > li {
+    display : flex;
+
+    width: 100%;
+
+    padding : 0 .5em;
+    margin-bottom: 1em;
+
+    @media (min-width:45em) {
+      width : 50%;
+    }
+    @media (min-width:65em) {
+      width : 33.333%;
+    }
+  }
+}

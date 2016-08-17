@@ -1,0 +1,31 @@
+/**
+ * Base styling and resets
+ */
+@import 'base';
+
+/**
+ * css objets built to be reused across
+ * several components
+ */
+@import 'objects/btn';
+@import 'objects/container';
+@import 'objects/keyframes';
+@import 'objects/list';
+@import 'objects/tag';
+@import 'objects/warning';
+
+/**
+ * css utils to be reused across
+ * the whole site
+ *
+ * -> this are supposed to be immutable and
+ *    should never be changed again
+ */
+@import 'util';
+
+/**
+ * vendor and plugin overwrite css
+ */
+@import "../../node_modules/react-image-gallery/src/image-gallery";
+@import "plugins/reactModal";
+@import "plugins/reactImageGallery";

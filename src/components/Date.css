@@ -1,0 +1,12 @@
+.c-date {
+  padding : 1em .5em;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.c-date svg {
+  margin-right: .5em;
+}
