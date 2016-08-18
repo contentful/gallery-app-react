@@ -20,11 +20,17 @@
 .c-gallery__modalClose {
   position: absolute;
 
-  top: -2em;
+  top: -1.5em;
   right: .5em;
 
   z-index: 100;
 
+}
+
+@media (orientation:landscape) {
+  .c-gallery__modalClose {
+    top: 3em;
+  }
 }
 
 @media (min-width:45em) {
@@ -33,6 +39,7 @@
     right: -1em;
   }
 }
+
 
 .c-gallery__modalOpenTitle {
   font-size: 1.25em;
