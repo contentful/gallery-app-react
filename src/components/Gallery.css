@@ -7,7 +7,7 @@
 
 .c-gallery__header {
   position: relative;
-  padding : 1em 5em;
+  padding : 1em 4em;
 
   text-align: center;
 }
@@ -20,10 +20,18 @@
 .c-gallery__modalClose {
   position: absolute;
 
-  top: 0;
-  right: -1em;
+  top: -2em;
+  right: .5em;
 
   z-index: 100;
+
+}
+
+@media (min-width:45em) {
+  .c-gallery__modalClose {
+    top: 0;
+    right: -1em;
+  }
 }
 
 .c-gallery__modalOpenTitle {

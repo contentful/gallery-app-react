@@ -31,7 +31,7 @@ function GalleryThumb ({ gallery }) {
 
         </figcaption>
       </figure>
-      <div className="u-flexHorizCenter u-marginTopAuto u-marginBottomDefault">
+      <div className="u-flexHorizCenter u-marginTopAuto u-marginBottomDefault u-paddingHorizDefault">
         <Link to={`/gallery/${gallery.sys.id}`} className="o-btnPrimary">View gallery</Link>
       </div>
     </div>
