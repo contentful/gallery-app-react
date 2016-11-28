@@ -6,7 +6,7 @@ let authorized
 export function initClient (spaceId, accessToken) {
   client = createClient({
     space: spaceId,
-    accessToken,
+    accessToken: accessToken,
     host: 'cdn.contentful.com'
   })
   return client.getSpace()
