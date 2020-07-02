@@ -6,7 +6,7 @@
   "dependencies": {
     "babel-polyfill": "^6.13.0",
     "contentful": "^3.5.0",
-    "deep-extend": "^0.4.1",
+    "deep-extend": "^0.5.1",
     "history": "^2.0.0",
     "react": "^15.3.0",
     "react-css-modules": "^3.7.9",
