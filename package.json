@@ -34,7 +34,7 @@
     "eslint-plugin-react": "^6.0.0",
     "eslint-plugin-standard": "^2.0.0",
     "mustache": "^2.2.1",
-    "node-sass": "^3.8.0",
+    "node-sass": "^4.14.1",
     "postcss-loader": "^0.9.1",
     "rimraf": "^2.5.4",
     "sass-loader": "^4.0.0",
